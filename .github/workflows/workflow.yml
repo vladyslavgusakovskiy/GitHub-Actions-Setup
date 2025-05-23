@@ -1,0 +1,20 @@
+name: CI
+run-name: ${{ github.actor }} is testing out GitHub Actions
+
+env:
+  GITHUB_ACTIONS: GitHubActions
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  github-task-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Triggered by ${{ github.event_name }}"
+      - run: echo "GITHUB_ACTIONS env ${{ env.GITHUB_ACTIONS }}"
+      - run: echo "Branch ${{ github.ref }} | Repo ${{ github.repository }}"

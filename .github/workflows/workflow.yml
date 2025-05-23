@@ -5,8 +5,6 @@ env:
   GITHUB_ACTIONS: GitHubActions
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
